@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Select Doctor to Delete</title>
+	<h1>Welcome to Good Will</h1>
+		Doctors of Good will 
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <h2>Select Doctor to Delete</h2>
+    <form th:action="@{/doctors/delete}" method="post">
+        <select name="doctorId" required>
+            <option value="" disabled selected>Select a Doctor</option>
+            <option th:each="doctor : ${doctorIds}" 
+                    th:value="${doctor.doctorId}" 
+                    th:text="${doctor.name + ' (' + doctor.doctorId + ')'}"></option>
+        </select>
+        <button type="submit">Delete</button>
+    </form>
+</body>
+</html>

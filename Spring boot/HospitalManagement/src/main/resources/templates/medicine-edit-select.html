@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Select Medicine to Edit</title>
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <h2>Select Medicine to Edit</h2>
+    <form th:action="@{/medicines/edit-form}" method="post">
+        <select name="medicineId" required>
+            <option value="" disabled selected>Select a Medicine</option>
+            <option th:each="medicine : ${medicineIds}" 
+                    th:value="${medicine.medicineId}" 
+                    th:text="${medicine.medicineName + ' (' + medicine.medicineId + ')'}"></option>
+        </select>
+        <button type="submit">Edit</button>
+    </form>
+</body>
+</html>

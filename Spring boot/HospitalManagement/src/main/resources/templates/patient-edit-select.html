@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Select Patient to Edit</title></head>
+<body>
+
+<!-- Include Navbar -->
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+<h2>Select Patient to Edit</h2>
+
+<form th:action="@{/patients/edit-form}" method="post">
+    <label>Select Patient ID:</label>
+    <select name="patientId">
+        <option th:each="p : ${patientIds}" th:value="${p.patient_id}" th:text="${p.patient_id} + ' - ' + ${p.name}"></option>
+    </select>
+    <button type="submit">Edit</button>
+</form>
+
+</body>
+</html>

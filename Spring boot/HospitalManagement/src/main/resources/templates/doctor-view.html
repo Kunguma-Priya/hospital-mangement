@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Doctors</title>
+	
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+    <h2>All Doctors</h2>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Experience</th>
+                <th>Specialization</th>
+                <th>Age</th>
+                <th>Department</th>
+                <th>Qualification</th>
+                <th>Salary</th>
+                <th>Working Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="doctor : ${doctors}">
+                <td th:text="${doctor.doctorId}"></td>
+                <td th:text="${doctor.name}"></td>
+                <td th:text="${doctor.email}"></td>
+                <td th:text="${doctor.experience}"></td>
+                <td th:text="${doctor.specialization}"></td>
+                <td th:text="${doctor.age}"></td>
+                <td th:text="${doctor.department}"></td>
+                <td th:text="${doctor.qualification}"></td>
+                <td th:text="${doctor.salary}"></td>
+                <td th:text="${doctor.workingTime}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

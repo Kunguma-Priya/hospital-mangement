@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Edit Patient</title></head>
+<body>
+
+<!-- Include Navbar -->
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<h2>Edit Patient</h2>
+
+<form th:action="@{/patients/update}" th:object="${patient}" method="post">
+    <input type="hidden" th:field="*{patient_id}" />
+
+    <label>Name:</label>
+    <input type="text" th:field="*{name}" required/><br/><br/>
+
+    <label>Age:</label>
+    <input type="number" th:field="*{age}" required/><br/><br/>
+
+    <label>Sex:</label>
+    <select th:field="*{sex}">
+        <option th:each="sex : ${sexValues}" th:value="${sex}" th:text="${sex}"></option>
+    </select><br/><br/>
+
+    <label>Disease:</label>
+    <input type="text" th:field="*{disease}"/><br/><br/>
+
+    <label>Type:</label>
+    <select th:field="*{type}">
+        <option th:each="type : ${typeValues}" th:value="${type}" th:text="${type}"></option>
+    </select><br/><br/>
+
+    <button type="submit">Update</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="navbar">
+<head>
+    <meta charset="UTF-8" />
+    <title>Good Will Hospital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f6fa;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            padding: 20px 40px;
+        }
+
+        .entity-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 40px;
+            color: #2c3e50;
+        }
+
+        .entity-navbar {
+            background-color: black;
+            width: 100%;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+
+        .op-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 16px;
+            background-color: #3498db;
+            border-radius: 4px;
+            white-space: nowrap;
+            transition: background-color 0.3s ease;
+        }
+
+        .op-link:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Good Will Hospital</h1>
+    <p>Compassionate care, trusted professionals.</p>
+</header>
+
+<div class="container">
+    <h2>About Us</h2>
+    <p>Founded with a mission to serve the community, Good Will Hospital has grown into a trusted center of medical excellence. We focus on patient-centered care, ensuring comfort and respect at every stage of treatment.</p>
+
+    <h2>Our Services</h2>
+    <ul>
+        <li>24/7 Emergency Care</li>
+        <li>General Medicine</li>
+        <li>Maternity and Child Care</li>
+        <li>Surgery and Postoperative Care</li>
+        <li>Diagnostic and Laboratory Services</li>
+        <li>Specialist Consultations</li>
+    </ul>
+
+    <h2>Contact Us</h2>
+    <p><strong>Address:</strong> 123 Healing Street, Caretown</p>
+    <p><strong>Phone:</strong> +123-456-7890</p>
+    <p><strong>Email:</strong> info@goodwillhospital.com</p>
+</div>
+
+<!-- Doctor Section -->
+<div class="entity-title">Doctor</div>
+<nav class="entity-navbar">
+    <a th:href="@{/doctors/add}" class="op-link">Add Doctor</a>
+    <a th:href="@{/doctors/view}" class="op-link">View Doctors</a>
+    <a th:href="@{/doctors/edit}" class="op-link">Edit Doctor</a>
+    <a th:href="@{/doctors/delete}" class="op-link">Delete Doctor</a>
+</nav>
+
+<!-- Patient Section -->
+<div class="entity-title">Patient</div>
+<nav class="entity-navbar">
+    <a th:href="@{/patients/add}" class="op-link">Add Patient</a>
+    <a th:href="@{/patients/view}" class="op-link">View Patients</a>
+    <a th:href="@{/patients/edit}" class="op-link">Edit Patient</a>
+    <a th:href="@{/patients/delete}" class="op-link">Delete Patient</a>
+</nav>
+
+<!-- Medicine Section -->
+<div class="entity-title">Medicine</div>
+<nav class="entity-navbar">
+    <a th:href="@{/medicines/add}" class="op-link">Add Medicine</a>
+    <a th:href="@{/medicines/view}" class="op-link">View Medicines</a>
+    <a th:href="@{/medicines/edit}" class="op-link">Edit Medicine</a>
+    <a th:href="@{/medicines/delete}" class="op-link">Delete Medicine</a>
+</nav>
+
+<footer>
+    <p>&copy; 2025 Good Will Hospital. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Delete Patient</title></head>
+<body>
+
+<!-- Include Navbar -->
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+<h2>Select Patient to Delete</h2>
+
+<form th:action="@{/patients/delete}" method="post">
+    <label>Select Patient ID:</label>
+    <select name="patientId">
+        <option th:each="p : ${patientIds}" th:value="${p.patient_id}" th:text="${p.patient_id} + ' - ' + ${p.name}"></option>
+    </select>
+    <button type="submit">Delete</button>
+</form>
+
+</body>
+</html>

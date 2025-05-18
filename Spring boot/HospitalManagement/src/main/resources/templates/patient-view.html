@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>View Patients</title></head>
+<body>
+
+<!-- Include Navbar -->
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+<h2>Patient List</h2>
+
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            <th>ID</th><th>Name</th><th>Age</th><th>Sex</th><th>Disease</th><th>Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="patient : ${patients}">
+            <td th:text="${patient.patient_id}">1</td>
+            <td th:text="${patient.name}">Name</td>
+            <td th:text="${patient.age}">Age</td>
+            <td th:text="${patient.sex}">Sex</td>
+            <td th:text="${patient.disease}">Disease</td>
+            <td th:text="${patient.type}">Type</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
